@@ -1,8 +1,17 @@
-password = input("Enter password: ")
-MINIMUM_LENGTH = 10
+def main():
+    password = get_password()
+    minimum_length = 10
 
-while len(password) < MINIMUM_LENGTH:
-    print("Password does not meet the requirement.")
+    while len(password) < minimum_length:
+        print("Password does not meet the requirement.")
+        password = get_password()
+
+    print("*" * len(password))
+
+
+def get_password() -> str:
     password = input("Enter password: ")
+    return password
 
-print("*" * len(password))
+
+main()
