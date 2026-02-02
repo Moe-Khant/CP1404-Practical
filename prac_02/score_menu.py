@@ -9,9 +9,12 @@ def main():
 
     while choice != "Q":
         if choice == "G":
-            mark = get_valid_score("Enter score between 0 and 100: ",0,100)
+            score = get_valid_score("Enter score between 0 and 100: ",0,100)
+        elif choice == "P":
+            result = determine_score(score)
+            print(result)
         elif choice == "S":
-            result = determine_score(mark)
+            print()
         else:
             print("Invalid choice")
         print("(G)et a valid score "
@@ -22,10 +25,21 @@ def main():
 
 
 def get_valid_score(prompt, low, high):
-    mark = int(input(prompt))
-    while mark < low or mark > high:
+    score = int(input(prompt))
+    while score < low or score > high:
         print("Invalid input")
-        mark = int(input(prompt))
-    return mark
+        score = int(input(prompt))
+    return score
+
+def determine_score(score):
+    """determine score based on input"""
+    if score < 0 or score > 100:
+        return "Invalid score"
+    elif score >= 90:
+        return "Excellent" + "\nYou got a prize!"
+    elif score >= 50:
+        return "Passable"
+    else:
+        return "Bad"
 
 main()
