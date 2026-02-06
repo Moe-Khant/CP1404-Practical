@@ -20,9 +20,9 @@ for index in range(0,len(numbers)):
 print(result)
 
 # Ex.4
-# numbers = []
-# with open("numbers.txt",'r') as in_file:
-#     for line in in_file:
-#         number = int(line.strip())
-#         numbers.append(number)
-# print(sum(numbers))
+numbers = []
+with open("numbers.txt",'r') as in_file:
+    for line in in_file:
+        number = int(line.strip())
+        numbers.append(number)
+print(sum(numbers))
