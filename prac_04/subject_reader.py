@@ -9,8 +9,8 @@ FILENAME = "subject_data.txt"
 def main():
     """Program to load and display subject data from file."""
     data = load_data(FILENAME)
-    print(data)
-
+    # print(data)
+    display_subject_details(data)
 
 def load_data(filename=FILENAME):
     """Read data from file formatted like: subject,lecturer,number of students."""
@@ -27,9 +27,15 @@ def load_data(filename=FILENAME):
         # print(data)  # See if that worked
         new_data.append(data)
         # print("----------")
+    input_file.close()
     return new_data
 
-    input_file.close()
+def display_subject_details(data):
+    """Display all subject details"""
+    name_width = max(len(pair[1]) for pair in data)
+    student_width = max(len(str(pair[2])) for pair in data)
+    for index in data:
+        print(f"{index[0]} is taught by {index[1]:<{name_width}} has {index[2]:>{student_width}} students.")
 
 
 main()
