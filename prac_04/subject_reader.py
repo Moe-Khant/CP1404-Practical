@@ -8,9 +8,9 @@ FILENAME = "subject_data.txt"
 
 def main():
     """Program to load and display subject data from file."""
-    data = load_data(FILENAME)
+    subject_details = load_data(FILENAME)
     # print(data)
-    display_subject_details(data)
+    display_subject_details(subject_details)
 
 def load_data(filename=FILENAME):
     """Read data from file formatted like: subject,lecturer,number of students."""
